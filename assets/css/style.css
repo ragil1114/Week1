@@ -5,7 +5,9 @@
 }
 
 body {
+    color: #39a6b2;
     background-color: #d9dcd6;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 .header {
