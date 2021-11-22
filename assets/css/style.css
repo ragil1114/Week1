@@ -49,10 +49,8 @@ header nav ul li a {
 }
 
 .hero {
-    height: 800px;
-    width: 100%;
-    margin-bottom: 25px;
-    background-image: url("../images/digital-marketing-meeting.jpg");
+    background-image: url("../images/run-buddy.jpg");
+    height: 600px;
     background-size: cover;
     background-position: center;
 }
@@ -208,3 +206,7 @@ footer div {
   footer a {
     color: #024e76;
   }  
+
+  section {
+      padding: 60px;
+  }
