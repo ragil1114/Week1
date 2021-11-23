@@ -1,3 +1,4 @@
+/* Universal * selector to be applied to entire document. */
 * {
     margin: 0;
     padding: 0;
@@ -48,6 +49,7 @@ p {
     font-size: 16px;
 }
 
+/* A period indicates its a class selector. Look for a matching class tag in the HTML doc. */
 .hero {
     background-image: url("../images/run-buddy.jpg");
     height: 600px;
@@ -56,6 +58,7 @@ p {
     position: relative;
 }
 
+/* a dash indicates the sequence of HTML elements to be modified */
 .hero-form {
     color: #024e76;
     background-color: #fce138;
@@ -98,18 +101,9 @@ p {
     font-size: 16px;
   }
 
+  /* Styles the What-We-Do section */
 .intro {
     text-align: center;
-  }
-
-.intro h2 {
-    font-size: 55px;
-    color: #024e76;
-    margin-bottom: 35px;
-    padding: 0 100px 20px 100px;
-    border-bottom: 3px solid;
-    border-color: #fce138;
-    display: inline-block;
   }
 
 .intro p {
@@ -118,6 +112,32 @@ p {
     width: 80%;
     font-size: 20px;
     margin: 0 auto;
+  }
+
+  /* Styles the What-You-Do section */
+.steps {
+    text-align: center;
+    background: #fce138;
+  }
+
+  /* Combine the .intro h2{} & .steps h2{} selectors into this one. Since they contain the same Declarations. */
+  .section-title {
+    font-size: 55px;
+    color: #024e76;
+    margin-bottom: 35px;
+    padding: 0 100px 20px 100px;
+    display: inline-block;
+    border-bottom: 3px solid;
+  }
+  
+  /* selector for what-we-do section */
+  .primary-border {
+    border-color: #fce138;
+  }
+  
+  /* selector for what-you-do section */
+  .secondary-border {
+    border-color: #39a6b2;
   }
 
 footer {
@@ -143,6 +163,7 @@ footer a {
     color: #024e76;
   }  
 
+/* gives every section a declaration */
 section {
       padding: 60px;
   }
