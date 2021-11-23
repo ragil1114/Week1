@@ -140,7 +140,12 @@ p {
     font-size: 23px;
   }
 
-  /* This is the shorthand or combined form of the .intro h2{} & .steps h2{} selectors into this one. Since they contain the same Declarations. */
+  /* selector that defines for the <span> element used in HTML DOC */
+.steps span {
+    font-size: 38px;
+  }
+
+  /* This is the shorthand or combined form of the .intro h2{} & .steps h2{} selectors. Since they contain the same Declarations. */
 .section-title {
     font-size: 55px;
     color: #024e76;
