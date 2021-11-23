@@ -101,7 +101,7 @@ p {
     font-size: 16px;
   }
 
-  /* Styles the What-We-Do section */
+  /* Intro selectors style the What-We-Do section. Look for the identical class attributes & elements in HTML doc. */
 .intro {
     text-align: center;
   }
@@ -111,7 +111,7 @@ p {
     color: #39a6b2;
     width: 80%;
     font-size: 20px;
-    margin: 0 auto;
+    margin: 0 auto;  /* Center aligns content */
   }
 
   /* Styles the What-You-Do section */
