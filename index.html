@@ -157,8 +157,37 @@
   </section>
   
   <!-- "reach out" section -->
-  <section>
+  <section id="reach-out">
     <h2>Reach Out</h2>
+    <div class="contact-info"> <!-- contact container -->
+        <!-- which means inline frame, nests browsing content and embeds an HTML page (GIFs, maps & videos) into your page -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3346.318432153873!2d-96.84857448559565!3d32.99537928012792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c24102d350879%3A0xd49604beaf4e56!2s18081%20Midway%20Rd%2C%20Dallas%2C%20TX%2075287!5e0!3m2!1sen!2sus!4v1637708317155!5m2!1sen!2sus" 
+      width="400" 
+      height="400"
+      style="border:0;"   
+      allowfullscreen="" 
+      loading="lazy">
+      </iframe>
+        <!-- ^ "style" attribute is an inline style to set no border, for newer browsers -->
+        <!-- ^^ "allowfullscreen" attribute offers a link to view the map on a new page in full-screen mode. No value assignment needed. -->
+    </div>
+
+    <div>
+      <h3>Run Buddy</h3>
+      <p>
+        Any questions or concerns before signing up?
+        <br />
+        Let us know and we'll be happy to talk to you! 
+      </p>
+        <!-- address element defines the contact information for the author or owner of the document -->
+      <address>
+        55 Main Street <br/>
+        Some Town, Ca <br/>
+        12345<br />
+        P: 555.RUN.BUDZ (555.786.2839)<br/>
+        E: <a href="mailto:info@runbuddy.io">info@runbuddy.io</a>   <!-- This element uses the "mailto:" prefix in the anchor tag's "href" attribute to instruct the browser to open the default mail client app upon clicking the link. Then it populates the address field with the email address in the href value. -->
+      </address>
+    </div>
   </section>
   
   <!-- footer -->

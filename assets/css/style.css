@@ -206,7 +206,7 @@ p {
     line-height: 1.3;
   }
 
-  /* rule can be applied to any HTML element that needs a quick fix to their text-align properties */
+  /* AKA: utility class. Rule can be applied to any HTML element that needs a quick fix to their text-align properties */
 .text-left {
     text-align: left;
   }
@@ -239,7 +239,7 @@ footer a {
     color: #024e76;
   }  
 
-  /* gives every section element a declaration */
+  /* rule to be followed by every section element */
 section {
       padding: 60px;
   }
