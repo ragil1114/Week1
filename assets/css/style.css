@@ -177,7 +177,7 @@ p {
     margin: 0 auto 30px auto;
     background: #024e76;
     color: #fce138;
-    overflow: auto; /* Overflow property used when float declarations jumble elements on the page. The same can be done with the "clear:" property followed by "left/right/both;" values. This is known as providing Block Formatting Context to the element. */
+    overflow: auto; /* Overflow property used when float declarations jumble elements on the page. The same can be done with the <clear> property followed by <left/right/both;> values. This is known as providing Block Formatting Context to the element. */
   }
 
 .trainer img {
@@ -233,13 +233,29 @@ p {
     height: 400px;
   }
 
-.contact-info div {
+.contact-info {
     width: 410px;
-    display: inline-block; /* This allows the .contact-info container to sit on the same row as the <iframe> element and allows us to assign a width. */
+    display: flexbox; /* This allows the .contact-info container to sit on the same row as the <iframe> element and allows us to assign a width. */
     vertical-align: top; /* lift content up to the top of the container or <div> */
     text-align: left;
     margin: 30px 0 0 60px;
     color: white;
+  }
+
+.contact-info h3 {
+    color: #fce138;
+    font-size: 32px;
+  }
+  
+.contact-info p, .contact-info address {
+    margin: 20px 0;
+    line-height: 1.5;
+    font-size: 20px;
+    font-style: normal;
+  }
+  
+.contact-info a {
+    color: #fce138;
   }
 
 footer {
