@@ -146,7 +146,8 @@ p {
   }
 
   /* This is the shorthand of the .intro h2{} & .steps h2{} selectors that were combined (then deleted) to make this one. Since they contain the same Declarations. */
-.section-title {
+  /* also used for reach-out section */
+  .section-title {
     font-size: 55px;
     color: #024e76;
     margin-bottom: 35px;
@@ -214,6 +215,31 @@ p {
   /* identify the matching class attribute in HTML doc */
 .text-right {
     text-align: right;
+  }
+
+  /* styles the reach-out section */
+.contact {
+    text-align: center;
+    background: #024e76;
+  }
+
+.contact h2 {
+    color: #fce138;
+  }
+
+  /* class selector that styles the iframe element */
+.contact-info iframe {
+    width: 400px;
+    height: 400px;
+  }
+
+.contact-info div {
+    width: 410px;
+    display: inline-block; /* This allows the .contact-info container to sit on the same row as the <iframe> element and allows us to assign a width. */
+    vertical-align: top; /* lift content up to the top of the container or <div> */
+    text-align: left;
+    margin: 30px 0 0 60px;
+    color: white;
   }
 
 footer {
