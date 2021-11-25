@@ -51,7 +51,7 @@ p {
 
   /* A period indicates its a class selector. Look for a matching class attribute in the HTML doc. */
 .hero {
-    background-image: url("../images/run-buddy.jpg");
+    background-image: url("../images/hero-bg.jpg");
     height: 600px;
     background-size: cover;
     background-position: center;
