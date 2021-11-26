@@ -15,7 +15,7 @@ header {
     padding: 20px 35px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #39a6b2;
-    display: flex; /* First added flexbox feature. Replaced "float:right" & "display:inline" values. */
+    display: flex; /* First added flexbox feature. Replaced Version 1.0 values of "float:right" & "display:inline". */
     justify-content: space-between; /* Evenly spaces out by calculating margin, border-width, padding & content of each child element. */
     flex-wrap: wrap; /* Allows content to be pushed to next line if it doesn't all fit. */
 }
@@ -36,14 +36,18 @@ header nav {
     margin: 7px 0;
 }
 
-header nav ul li {
-    display: inline;
+header nav ul { /* This rule is known as the Flex Container since it has the "display: flex;" property & value. "Row" is the default value of "flex-direction" property. The flex-direction values: (row/column) also determine the Main Axis. Thus allowing the Cross Axis to run perpendicular. */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* This property follows the Main Axis. */
+  align-items: center; /* This property follows the Cross Axis. In this case it vertically centers the content. */
+  list-style: none;
 }
 
 header nav ul li a {
     margin: 0 30px;
     font-weight: lighter;
-    font-size: 22px;
+    font-size: 2vw; /* Viewport Width value */
   }
 
 p {
