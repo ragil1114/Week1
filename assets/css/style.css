@@ -15,6 +15,9 @@ header {
     padding: 20px 35px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #39a6b2;
+    display: flex; /* First added flexbox feature. Replaced "float:right" & "display:inline" values. */
+    justify-content: space-between; /* Evenly spaces out by calculating margin, border-width, padding & content of each child element. */
+    flex-wrap: wrap; /* Allows content to be pushed to next line if it doesn't all fit. */
 }
 
 header h1 {
@@ -22,7 +25,6 @@ header h1 {
     font-size: 36px;
     color: #fce138;
     margin: 0;
-    display: inline;
 }
 
 header a {
@@ -31,7 +33,6 @@ header a {
 }
 
 header nav {
-    float: right;
     margin: 7px 0;
 }
 
