@@ -82,16 +82,24 @@
 
 <!-- "what we do" section -->
 <section id="what-we-do" class="intro"> <!-- ID attribute used here to allow visitors to jump to this section by clicking its link in the navigation bar -->
-  <h2 class="section-title primary-border">What We Do</h2> <!-- Separated here by a space, the attribute class="section-title primary-border" is actually pulling in CSS declarations from two different classes. -->
-  <p>
-    butcher selfies chambray shabby chic gentrify readymade yr Echo Park XOXO Tumblr normcore Banksy direct trade Blue Bottle chillwave you probably haven't heard of them single-origin coffee Vice fanny pack fixie Odd Future Austin fingerstache pickled twee synth Wes Anderson Thundercats viral bitters flannel meggings narwhal Marfa Schlitz sustainable Intelligentsia umami deep v craft
-  </p>
+  <div class="flex-row"> <!-- added <div> element with class attribute here to wrap the <h2> with flexbox -->
+    <h2 class="section-title primary-border"> <!-- Separated here by a space, the attribute class="section-title primary-border" is actually pulling in CSS declarations from two different classes. -->
+      What We Do</h2> 
+  </div>
+  
+  <div class="flex-row">
+    <p>
+      butcher selfies chambray shabby chic gentrify readymade yr Echo Park XOXO Tumblr normcore Banksy direct trade Blue Bottle chillwave you probably haven't heard of them single-origin coffee Vice fanny pack fixie Odd Future Austin fingerstache pickled twee synth Wes Anderson Thundercats viral bitters flannel meggings narwhal Marfa Schlitz sustainable Intelligentsia umami deep v craft
+    </p>
+  </div>
 </section>
 
 <!-- "what you do" section -->
 <section id="what-you-do" class="steps"> <!-- Take these id & class elements & match them with their identical selectors in CSS doc. -->
-  <h2 class="section-title secondary-border">What You Do</h2> <!-- match these two class attributes with their identical selectors in CSS doc -->
-  
+  <div class="flex-row">
+    <h2 class="section-title secondary-border">What You Do</h2> <!-- match these two class attributes with their identical selectors in CSS doc -->
+  </div>
+
   <div>
     <img src="./assets/images/step-1.svg" alt="" /> <!-- SVG img link with an empty alt tag. Since its only a decorative img. -->
     <h3>Step 1: <span>Fill Out the Form Above.</span></h3> <!-- <span> is an inline element meant for highlighting (inline content) sections of larger text blocks -->
@@ -119,9 +127,11 @@
   
   <!-- "meet the trainers" section -->
   <section id="your-trainers" class="trainers">
-    <h2 class="section-title primary-border"> <!-- Class attributes reused from What-We-Do section to apply same styling. -->
-      Meet The Trainers
-    </h2>
+    <div class="flex-row">
+      <h2 class="section-title primary-border"> <!-- Class attributes reused from What-We-Do section to apply same styling. -->
+        Meet The Trainers
+      </h2>
+    </div>
 
     <!-- first trainer bio -->
     <article class="trainer">
@@ -165,7 +175,10 @@
   
   <!-- "reach out" section -->
   <section id="reach-out" class=contact>
-    <h2 class="section-title secondary-border">Reach Out</h2>
+    <div class="flex-row">
+      <h2 class="section-title secondary-border">Reach Out</h2>
+    </div>
+
     <div class="contact-info"> <!-- contact container -->
         <!-- iframe means inline frame. It nests browsing content and embeds an HTML page (GIFs, maps & videos) into your page -->
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3346.318432153873!2d-96.84857448559565!3d32.99537928012792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c24102d350879%3A0xd49604beaf4e56!2s18081%20Midway%20Rd%2C%20Dallas%2C%20TX%2075287!5e0!3m2!1sen!2sus!4v1637708317155!5m2!1sen!2sus" 
