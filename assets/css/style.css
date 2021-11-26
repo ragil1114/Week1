@@ -36,7 +36,8 @@ header nav {
     margin: 7px 0;
 }
 
-header nav ul { /* This rule is known as the Flex Container since it has the "display: flex;" property & value. "Row" is the default value of "flex-direction" property. The flex-direction values: (row/column) also determine the Main Axis. Thus allowing the Cross Axis to run perpendicular. */
+  /* This rule is known as the Flex Container since it has the "display: flex;" property & value. "Row" is the default value of "flex-direction" property. The flex-direction values: (row/column) determine the Main Axis. Thus allowing the Cross Axis to run perpendicular. */
+header nav ul { 
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; /* This property follows the Main Axis. */
@@ -57,10 +58,11 @@ p {
   /* A period indicates its a class selector. Look for a matching class attribute in the HTML doc. */
 .hero {
     background-image: url("../images/hero-bg.jpg");
-    height: 600px;
     background-size: cover;
     background-position: center;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
   /* a dash indicates the sequence of HTML elements to be modified */
@@ -68,11 +70,24 @@ p {
     color: #024e76;
     background-color: #fce138;
     padding: 20px;
-    width: 500px;
     border: solid 3px #024e76;
-    position: absolute;
-    bottom: 120px;
-    right: 140px;
+    width: 40%;
+    margin: 3.5%;
+}
+
+.hero-cta {
+    width: 35%;
+    text-align: right;
+    margin: 3.5%;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.hero-cta h2 {
+    font-style: italic;
+    font-size: 55px;
+    color: #fce138;
 }
 
 .hero-form h3 {
