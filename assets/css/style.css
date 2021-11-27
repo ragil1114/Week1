@@ -210,43 +210,42 @@ p {
 
   /* this CSS rule styles the entire "meet the trainers" section */
 .trainers {
-
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
-  /* this rule styles all HTML elements with the "trainer" class attribute */
+  /* this rule adds flexbox style to all HTML elements with the trainer class attribute */
 .trainer {
-    width: 900px;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 20px auto;
     background: #024e76;
     color: #fce138;
-    overflow: auto; /* Overflow property used when float declarations jumble elements on the page. The same can be done with the <clear> property followed by <left/right/both;> values. This is known as providing Block Formatting Context to the element. */
+    flex: 1;
   }
 
 .trainer img {
-    width: 35%;
-    float: left;
+    width: 100%;
   }
   
 .trainer-bio {
-    padding: 35px;
-    float: left;
-    width: 65%;
+    padding: 25px;
+    line-height: 1.3;
   }
 
 .trainer-bio h3 {
-    font-size: 32px;
-    margin-bottom: 8px;
+    font-size: 28px;
   }
   
 .trainer-bio h4 {
     font-weight: lighter;
-    font-size: 26px;
-    margin-bottom: 25px;
+    font-size: 22px;
+    margin-bottom: 15px;
   }
   
 .trainer-bio p {
     font-size: 17px;
-    line-height: 1.3;
   }
 
   /* AKA: utility class. Rule can be applied to any HTML element that needs a quick fix to their text-align properties */
