@@ -304,6 +304,7 @@ p {
     color: #fce138;
   }
 
+  /* adds flexbox to child elements in reach out section */
 .contact-form input, .contact-form textarea {
     border: 1px solid #024e76;
     display: block;
@@ -314,7 +315,7 @@ p {
     margin-bottom: 15px;
     margin-top: 5px;
   }
-
+  /* adds flexbox to child elements in reach out section */
 .contact-form button {
     width: 100%;
     border: none;
