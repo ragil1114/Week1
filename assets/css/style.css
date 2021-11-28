@@ -14,10 +14,17 @@ body {
 header {
     padding: 20px 35px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #39a6b2;
-    display: flex; /* First added flexbox feature. Replaced Version 1.0 values of "float:right" & "display:inline". */
-    justify-content: space-between; /* Evenly spaces out by calculating margin, border-width, padding & content of each child element. */
-    flex-wrap: wrap; /* Allows content to be pushed to next line if it doesn't all fit. */
+    display: flex;      /* First added flexbox feature. Replaced Version 1.0 values of "float:right" & "display:inline". */
+    justify-content: space-between;     /* Evenly spaces out by calculating margin, border-width, padding & content of each child element. */
+    flex-wrap: wrap;    /* Allows content to be pushed to next line if it doesn't all fit. */
+    position: -webkit-sticky;   /* Vendor Prefix(-webkit-) attached for Safari browser users. Always list the prefixed version first before the standard/finalized one. */
+    position: sticky;   /* adds fixed position to header */ 
+    top: 0;     /* tells browser where to stick the element when its in fixed position */
+    background-image: url("../images/hero-bg.jpg");     /* This & the following two lines style the header to match the hero section. */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;   
+    background-position: 80%;
 }
 
 header h1 {
@@ -25,6 +32,7 @@ header h1 {
     font-size: 36px;
     color: #fce138;
     margin: 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);   /* adds shadow to text */
 }
 
 header a {
@@ -49,6 +57,7 @@ header nav ul li a {
     padding: 10px 15px;
     font-weight: lighter;
     font-size: 2vw; /* Viewport Width value */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 p {
@@ -64,16 +73,20 @@ p {
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
+    background-attachment: fixed;   /* Find the two identical declarations in header rule. This makes it so the header looks apart of the hero section. */
+    background-position: 80%;       /* ^^ */
 }
 
   /* a dash indicates the sequence of HTML elements to be modified */
 .hero-form {
     color: #024e76;
-    background-color: #fce138;
+    background-color: rgba(252, 225, 56, 0.8); /* adds transparency to form */
     padding: 20px;
     border: solid 3px #024e76;
     width: 40%;
     margin: 3.5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);    /* adds shadow to form */
+    border-radius: 15px;    /* adds round corners to element */
 }
 
 .hero-cta {
@@ -89,6 +102,7 @@ p {
     font-style: italic;
     font-size: 55px;
     color: #fce138;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-form h3 {
@@ -108,6 +122,7 @@ p {
     color: #024e76;
     width: 100%;
     margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 .hero-form label {
@@ -120,6 +135,7 @@ p {
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    border-radius: 10px;
 }
 
   /* Intro selectors style the What-We-Do section. Look for the identical class attributes & elements in HTML doc. */
@@ -315,6 +331,7 @@ p {
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px;
+    border-radius: 10px;
 }
 
   /* adds flexbox to child elements in reach out section */
@@ -326,6 +343,7 @@ p {
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
+    border-radius: 10px;
 }
 
 footer {
@@ -367,6 +385,7 @@ section {
   header {
       padding-bottom: 0;
       justify-content: center;
+      position: relative
   }
   
   header h1 {
