@@ -53,11 +53,19 @@ header nav ul {
     list-style: none;
 }
 
-header nav ul li a {
+header nav ul li a {                                            
     padding: 10px 15px;
     font-weight: lighter;
     font-size: 2vw; /* Viewport Width value */
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+    /* Pseudo-Class: adds hover effect to the element. */
+header nav ul li a:hover {
+    background: #fce138;
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
 }
 
 p {
@@ -123,6 +131,13 @@ p {
     width: 100%;
     margin-bottom: 15px;
     border-radius: 10px;
+    background-color: rgba(255,255,255, 0.75);      /* This declaration makes the form input's default state slightly transparent */
+}
+
+    /* Rule for focus state. Switches to full opaqueness when the input is in focus. */
+.form-input:focus {
+    background-color: rgba(255,255,255, 1);
+    outline: none;
 }
 
 .hero-form label {
@@ -136,6 +151,11 @@ p {
     padding: 10px 20px;
     font-size: 16px;
     border-radius: 10px;
+}
+
+    /* Pseudo-Class: adds hover effect to the element. */
+.hero-form button:hover {
+    background-color: #39a6b2;  
 }
 
   /* Intro selectors style the What-We-Do section. Look for the identical class attributes & elements in HTML doc. */
@@ -158,11 +178,16 @@ p {
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom: 1px solid #39a6b2;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid #39a6b2;
+}
+
+    /* rule for state based on Positioning */
+.step:last-child {
+    border-bottom: none;
 }
 
   /* renamed selector from ".steps h3" to apply flexbox */
@@ -332,6 +357,14 @@ p {
     margin-bottom: 15px;
     margin-top: 5px;
     border-radius: 10px;
+    background-color: rgba(255,255,255,0.75);
+    outline: none;
+}
+
+    /* rule for focus state */
+.contact-form input:focus, .contact-form textarea:focus {
+    background-color: rgba(255,255,255, 1);
+    outline: none;
 }
 
   /* adds flexbox to child elements in reach out section */
@@ -344,6 +377,12 @@ p {
     padding: 15px 0;
     font-size: 16px;
     border-radius: 10px;
+}
+
+    /* Pseudo-Class: adds hover effect to the element. */
+.contact-form button:hover {
+    color: #fce138;
+    background: #39a6b2;
 }
 
 footer {
