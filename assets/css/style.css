@@ -1,4 +1,11 @@
-  /* Universal * selector to be applied to entire document. */
+    /* Global custom property (Variable) */
+:root {
+    --primary-color: #fce138;
+    --secondary-color: #024e76;
+    --tertiary-color: #39a6b2;
+}
+
+    /* Universal * selector to be applied to entire document. */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +13,7 @@
 }
 
 body {
-    color: #39a6b2;
+    color: var(--tertiary-color);
     background-color: #d9dcd6;
     font-family: Helvetica, Arial, sans-serif;
 }
@@ -17,27 +24,28 @@ header {
     display: flex;      /* First added flexbox feature. Replaced Version 1.0 values of "float:right" & "display:inline". */
     justify-content: space-between;     /* Evenly spaces out by calculating margin, border-width, padding & content of each child element. */
     flex-wrap: wrap;    /* Allows content to be pushed to next line if it doesn't all fit. */
-    position: -webkit-sticky;   /* Vendor Prefix(-webkit-) attached for Safari browser users. Always list the prefixed version first before the standard/finalized one. */
+    position: -webkit-sticky;   /* Vendor Prefix: -webkit- attached for Safari browser users. Always list the prefixed version first before the standard/finalized one. */
     position: sticky;   /* adds fixed position to header */ 
     top: 0;     /* tells browser where to stick the element when its in fixed position */
-    background-image: url("../images/hero-bg.jpg");     /* This & the following two lines style the header to match the hero section. */
+    background-image: url("../images/hero-bg.jpg");     /* This & the following two properties, style the header to match the hero section. */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;   
     background-position: 80%;
+    z-index: 9999;      /* This property changes the stacking order of the HTML elements on the page. A higher z-index brings the element to the front while a lower z-index pushes it to the back. */
 }
 
 header h1 {
     font-weight: bold;
     font-size: 36px;
-    color: #fce138;
+    color: var(--primary-color);
     margin: 0;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);   /* adds shadow to text */
 }
 
 header a {
     text-decoration: none;
-    color: #fce138;
+    color: var(--primary-color);
 }
 
 header nav {
@@ -62,8 +70,8 @@ header nav ul li a {
 
     /* Pseudo-Class: adds hover effect to the element. */
 header nav ul li a:hover {
-    background: #fce138;
-    color: #024e76;
+    background: var(--primary-color);
+    color: var(--secondary-color);
     border-radius: 15px;
     text-shadow: none;
 }
@@ -87,10 +95,10 @@ p {
 
   /* a dash indicates the sequence of HTML elements to be modified */
 .hero-form {
-    color: #024e76;
+    color: var(--secondary-color);
     background-color: rgba(252, 225, 56, 0.8); /* adds transparency to form */
     padding: 20px;
-    border: solid 3px #024e76;
+    border: solid 3px var(--secondary-color);
     width: 40%;
     margin: 3.5%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);    /* adds shadow to form */
@@ -109,7 +117,7 @@ p {
 .hero-cta h2 {
     font-style: italic;
     font-size: 55px;
-    color: #fce138;
+    color: var(--primary-color);
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -123,11 +131,11 @@ p {
 }
 
 .form-input {
-    border: 1px solid #024e76;
+    border: 1px solid var(--secondary-color);
     display: block;
     padding: 7px 15px;
     font-size: 16px;
-    color: #024e76;
+    color: var(--secondary-color);
     width: 100%;
     margin-bottom: 15px;
     border-radius: 10px;
@@ -145,23 +153,84 @@ p {
 }
 
 .hero-form button {
-    color: #fce138;
-    background-color: #024e76;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     border-radius: 10px;
 }
 
-    /* Pseudo-Class: adds hover effect to the element. */
+    /* Pseudo-Class: Adds hover effect to the element. */
 .hero-form button:hover {
-    background-color: #39a6b2;  
+    background-color: var(--tertiary-color);  
 }
 
-  /* Intro selectors style the What-We-Do section. Look for the identical class attributes & elements in HTML doc. */
+    /* Pseudo-Element: Allows the selected elements to be invisble. Look for identical class attributes in HTML doc. Hint:they are inside <span> tags. */
+.checkbox-wrapper input, .radio-wrapper input {
+    opacity: 0;
+}
+
+    /* preps label elements so that new buttons can fit inside */
+.checkbox-wrapper label, .radio-wrapper label {
+    position: relative;
+    left: 10px;
+    margin: 10px;
+    line-height: 1.6;
+}
+
+    /* The ::before pseudo-element lets us inject content into an HTML element using CSS. */
+.checkbox-wrapper label::before, .radio-wrapper label::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.75);  
+    border: 1px solid var(--secondary-color);  
+    position: absolute;     /* used to place new box on top of invisble/original input element */
+    top: -4px;
+    left: -30px;
+    border-radius: 50%; /* rounded-corners */
+}
+
+    /* define how buttons display when clicked on */
+.radio-wrapper label::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    position: absolute;
+    left: -29px;
+    top: -3px;
+    background-image: radial-gradient(circle, var(--tertiary-color), var(--secondary-color));    /* Adjust the look of the input to gradient look. */
+}
+  
+.checkbox-wrapper label::after {
+    content: "";
+    height: 6px;
+    width: 14px;
+    border-left: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    position: absolute;
+    left: -26px;
+    top: 1px;
+    transform: rotate(-58deg);  /* Adjust the look of the input to an actual checkmark. */
+}
+
+    /* allows user to fill in radio button once clicked on */
+.checkbox-wrapper input + label::after, .radio-wrapper input + label::after {
+    content: none;
+}
+
+    /* allows user to check the box off once clicked on */
+.checkbox-wrapper input:checked + label::after, .radio-wrapper input:checked + label::after {
+    content: "";
+}
+
+    /* Intro selectors style the What-We-Do section. Look for the identical class attributes & elements in HTML doc. */
 .intro p {
     line-height: 1.7;
-    color: #39a6b2;
+    color: var(--tertiary-color);
     width: 80%;
     font-size: 20px;
     margin: 0 auto;  /* Center aligns content */
@@ -170,7 +239,7 @@ p {
 
   /* Steps selectors style the What-You-Do section. */
 .steps {
-    background: #fce138;
+    background: var(--primary-color);
 }
 
   /* styles all HTML elements with "step" class attribute with flexbox */
@@ -182,7 +251,7 @@ p {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #39a6b2;
+    border-bottom: 1px solid var(--tertiary-color);
 }
 
     /* rule for state based on Positioning */
@@ -192,7 +261,7 @@ p {
 
   /* renamed selector from ".steps h3" to apply flexbox */
 .step h3 {
-    color: #024e76;
+    color: var(--secondary-color);
     font-size: 46px;
     flex: 1 30%;
 }
@@ -218,21 +287,21 @@ p {
 }
   
 .step-text p {
-    color: #39a6b2;
+    color: var(--tertiary-color);
     font-size: 18px;
 }
 
 .step-text h4 {
     font-size: 26px;
     line-height: 1.5;
-    color: #024e76;
+    color: var(--secondary-color);
 }
 
   /* This is the shorthand rule of the .intro h2{} & .steps h2{} selectors that were replaced (combined then deleted) to make this one. Since they contain the same declarations. */
   /* also used for reach-out section */
 .section-title {
     font-size: 48px;
-    color: #024e76;
+    color: var(--secondary-color);
     border-bottom: 3px solid;
     padding-bottom: 20px;
     text-align: center;
@@ -242,12 +311,12 @@ p {
   
   /* selector for what-we-do section */
 .primary-border {
-    border-color: #fce138;
+    border-color: var(--primary-color);
 }
   
   /* selector for what-you-do section */
 .secondary-border {
-    border-color: #39a6b2;
+    border-color: var(--tertiary-color);
 }
 
   /* this CSS rule styles the entire "meet the trainers" section */
@@ -262,8 +331,8 @@ p {
   /* this rule adds flexbox style to all HTML elements with the trainer class attribute */
 .trainer {
     margin: 0 auto 20px auto;
-    background: #024e76;
-    color: #fce138;
+    background: var(--secondary-color);
+    color: var(--primary-color);
     flex: 1;
 }
 
@@ -302,11 +371,11 @@ p {
 
   /* styles the reach-out section */
 .contact {
-    background: #024e76;
+    background: var(--secondary-color);
 }
 
 .contact h2 {
-    color: #fce138;
+    color: var(--primary-color);
 }
 
   /* allows all three child elements (trainer cards) in meet the trainer section to share the space equally */
@@ -331,7 +400,7 @@ p {
 }
 
 .contact-info h3 {
-    color: #fce138;
+    color: var(--primary-color);
     font-size: 32px;
 }
   
@@ -343,16 +412,16 @@ p {
 }
   
 .contact-info a {
-    color: #fce138;
+    color: var(--primary-color);
 }
 
   /* adds flexbox to child elements in reach out section */
 .contact-form input, .contact-form textarea {
-    border: 1px solid #024e76;
+    border: 1px solid var(--secondary-color);
     display: block;
     padding: 7px 15px;
     font-size: 16px;
-    color: #024e76;
+    color: var(--secondary-color);
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px;
@@ -361,7 +430,7 @@ p {
     outline: none;
 }
 
-    /* rule for focus state */
+    /* Pseudo-Class: rule for focus state */
 .contact-form input:focus, .contact-form textarea:focus {
     background-color: rgba(255,255,255, 1);
     outline: none;
@@ -371,22 +440,22 @@ p {
 .contact-form button {
     width: 100%;
     border: none;
-    background: #fce138;
-    color: #024e76;
+    background: var(--primary-color);
+    color: var(--secondary-color);
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
     border-radius: 10px;
 }
 
-    /* Pseudo-Class: adds hover effect to the element. */
+    /* Pseudo-Class: adds hover effect to the element */
 .contact-form button:hover {
-    color: #fce138;
-    background: #39a6b2;
+    color: var(--primary-color);
+    background: var(--tertiary-color);
 }
 
 footer {
-    background: #fce138;
+    background: var(--primary-color);
     width: 100%;
     padding: 40px 35px;
     display: flex; /* adds flexbox to footer */
@@ -395,7 +464,7 @@ footer {
 }
 
 footer h2 {
-    color: #024e76;
+    color: var(--secondary-color);
     font-size: 30px;
     margin: 0;
 }
@@ -406,7 +475,7 @@ footer div {
 }
 
 footer a {
-    color: #024e76;
+    color: var(--secondary-color);
 }  
 
   /* rule to be followed by every section element */
